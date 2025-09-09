@@ -111,4 +111,4 @@ Scripts
 
 Documentation
 
-- Full project docs and usage examples: `docs.md`
+- Full project docs and usage examples: [docs.md](docs.md)
