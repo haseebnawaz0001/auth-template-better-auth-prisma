@@ -6,6 +6,8 @@ import { useRouter } from "next/navigation";
 import SignUp from "@/components/auth/signup"; // your block with email+password
 import { authClient } from "@/auth-kit/client";
 import { toast } from "sonner";
+import dynamic from "next/dynamic";
+const ToasterProvider = dynamic(() => import("@/components/ui/toaster-provider"), { ssr: false });
 
 export default function Page() {
   const router = useRouter();
@@ -35,6 +37,9 @@ export default function Page() {
   }
 
   return (
-    <SignUp onSubmit={handleSubmit} pending={pending} switchHref="/sign-in" />
+    <>
+      <ToasterProvider />
+      <SignUp onSubmit={handleSubmit} pending={pending} switchHref="/sign-in" />
+    </>
   );
 }

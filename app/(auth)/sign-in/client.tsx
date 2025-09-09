@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import SignIn from "@/components/auth/signin";
 import { authClient } from "@/auth-kit/client";
 import { toast } from "sonner";
+import dynamic from "next/dynamic";
+const ToasterProvider = dynamic(() => import("@/components/ui/toaster-provider"), { ssr: false });
 
 export default function SignInPageClient({
   initialNext,
@@ -33,7 +35,9 @@ export default function SignInPageClient({
   }
 
   return (
-    <SignIn onSubmit={handleSubmit} pending={pending} switchHref="/sign-up" />
+    <>
+      <ToasterProvider />
+      <SignIn onSubmit={handleSubmit} pending={pending} switchHref="/sign-up" />
+    </>
   );
 }
-
