@@ -1,5 +1,5 @@
 "use client";
-import { authClient } from "./client";
+import { authClient } from ".";
 
 export function SignOutButton({
   redirectTo = "/sign-in",
