@@ -1,7 +1,7 @@
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
-import { auth, prisma } from "@/auth-kit/config";
-import { hasRole } from "@/auth-kit/rbac";
+import { auth, prisma } from "@/auth-kit/server/config";
+import { hasRole } from "@/auth-kit/server/rbac";
 
 export async function POST(req: Request) {
   const session = await auth.api.getSession({ headers: await headers() });

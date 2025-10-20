@@ -1,7 +1,7 @@
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { getSessionServer } from "@/auth-kit/server";
-import { hasRole } from "@/auth-kit/rbac";
+import { hasRole } from "@/auth-kit/server/rbac";
 import DashboardTemplate from "@/app/(protected)/dashboard/DashboardTemplate";
 
 export default async function DashboardPage() {

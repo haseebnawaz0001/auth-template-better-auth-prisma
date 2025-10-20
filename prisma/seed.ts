@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 // Reuse your centralized config (same instance the app uses)
-import { auth, prisma as sharedPrisma } from "@/auth-kit/config";
+import { auth, prisma as sharedPrisma } from "@/auth-kit/server/config";
 
 const prisma =
   sharedPrisma instanceof PrismaClient ? sharedPrisma : new PrismaClient();
